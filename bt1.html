@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="doc()">
+<img id="trau" src="images.jpg" style="position:absolute;left:0; top:0;" height="150" width="250" >
+<script>
+   function up() {
+       let u = document.getElementById("trau");
+       u.style.top=parseInt(u.style.top) -5 +'px';
+   }
+   function down() {
+       let u =document.getElementById("trau");
+       u.style.top=parseInt(u.style.top) +5 +'px';
+   }
+   function left() {
+       let u =document.getElementById("trau");
+       u.style.left=parseInt(u.style.left) -5 +'px';
+   }
+   function righ() {
+       let u =document.getElementById("trau");
+       u.style.left=parseInt(u.style.left) + 5 + 'px';
+   }
+function move(evt) {
+    switch (evt.keyCode) {
+        case 37 :
+            left();
+            break;
+        case 38 :
+            up();
+            break;
+        case 39 :
+            righ();
+            break;
+        case 40 :
+            down();
+            break;
+    }
+}function doc() {
+       window.addEventListener('keydown',move);
+   }
+</script>
+</body>
+</html>
